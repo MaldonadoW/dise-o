@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visual Studio Code</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #121212;
+            color: #f5f5f5;
+            overflow-x: hidden;
+        }
+
+        header {
+            background-color: #1e1e1e;
+            color: #61dafb;
+            padding: 30px 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            background-image: url('https://codesandbox.io/_next/image?url=%2Fnew%2Fchangelog%2F2022-08-22-vs-code-insider-support-faster-project-imports%2Fbanner.jpg&w=3840&q=75'); /* Imagen de fondo */
+            background-size: cover;
+            background-position: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 3em;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+        }
+
+        nav {
+            background-color: #333;
+            padding: 15px 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            color: #61dafb;
+            text-decoration: none;
+            font-size: 1.2em;
+            transition: color 0.3s;
+            cursor: pointer;
+        }
+
+        nav ul li a:hover {
+            color: #ffffff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        section {
+            margin-bottom: 50px;
+            opacity: 0; /* Invisible initially */
+            transform: translateY(50px); /* Move down initially */
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        section.visible {
+            opacity: 1;
+            transform: translateY(0); /* Reset to original position */
+        }
+
+        section h2 {
+            color: #61dafb;
+            border-left: 5px solid #61dafb;
+            padding-left: 15px;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        section p, ul {
+            font-size: 1.2em;
+            line-height: 1.8;
+            color: #cccccc;
+        }
+
+        ul {
+            margin-left: 40px;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+        }
+
+        .advantages, .disadvantages {
+            background-color: #1e1e1e;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+        }
+
+        footer {
+            background-color: #1e1e1e;
+            color: #777;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 60px;
+            border-top: 1px solid #333;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 1em;
+        }
+
+        /* Imagenes */
+        .image-container {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        @media (min-width: 768px) {
+            nav ul li {
+                margin: 0 30px;
+            }
+
+            section h2 {
+                font-size: 3em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Visual Studio Code</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#que-es">¿Qué es?</a></li>
+            <li><a href="#como-funciona">¿Cómo funciona?</a></li>
+            <li><a href="#caracteristicas">Características</a></li>
+            <li><a href="#ventajas">Ventajas</a></li>
+            <li><a href="#desventajas">Desventajas</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <section id="que-es">
+            <h2>¿Qué es Visual Studio Code?</h2>
+            <p>Visual Studio Code es un editor de código fuente muy popular y gratuito, desarrollado por Microsoft. Es perfecto para programadores de todos los niveles y se usa para crear todo tipo de aplicaciones.</p>
+            
+            <!-- Imagen relacionada con Visual Studio Code -->
+            <div class="image-container">
+                <img src="https://media.licdn.com/dms/image/D5612AQE6JMOUB_OwNw/article-cover_image-shrink_600_2000/0/1707475482313?e=2147483647&v=beta&t=WIRQuAngGdEnh06GQmUI-dTeZlG1-BiKXItYCOqYj48" alt="Visual Studio Code Editor">
+            </div>
+        </section>
+
+        <section id="como-funciona">
+            <h2>¿Cómo funciona Visual Studio Code?</h2>
+            <p>Visual Studio Code es una herramienta que te ayuda a escribir y organizar tu código de manera más eficiente. Te permite editar, organizar, ejecutar, depurar y personalizar tu código.</p>
+        </section>
+
+        <section id="caracteristicas">
+            <h2>Características</h2>
+            <ul>
+                <li><strong>Interfaz Personalizable:</strong> Puedes elegir entre una amplia variedad de temas para adaptar la apariencia de VS Code a tus preferencias. Esto incluye cambiar los colores de fondo, texto y otros elementos.</li>
+                <li><strong>Extensiones:</strong> Miles de extensiones que te permiten agregar nuevas funcionalidades, como soporte para lenguajes específicos, integración con herramientas de control de versiones, y mucho más.</li>
+                <li><strong>Inteligencia Artificial:</strong> El completado de código de VS Code sugiere automáticamente el código que estás escribiendo, lo que acelera el proceso de desarrollo y reduce errores.</li>
+                <li><strong>Depuración:</strong> Los puntos de interrupción te permiten pausar la ejecución de tu código en puntos específicos para inspeccionar variables y entender el flujo de ejecución.</li>
+                <li><strong>Vista dividida:</strong> Permite dividir la ventana del editor en varias partes para trabajar con múltiples archivos simultáneamente.</li>
+            </ul>
+
+            <!-- Imagen relacionada con las características de VS Code -->
+            <div class="image-container">
+                <img src="https://webdesigncusco.com/wp-content/uploads/2022/10/vs-code_hero.jpg" alt="Características de Visual Studio Code">
+            </div>
+        </section>
+
+        <section id="ventajas" class="advantages">
+            <h2>Ventajas de utilizar Visual Studio Code</h2>
+            <ul>
+                <li>Es gratuito y de código abierto.</li>
+                <li>Es personalizable.</li>
+                <li>Posee una gran variedad de lenguajes.</li>
+                <li>Es ligero y rápido.</li>
+                <li>Cuenta con inteligencia artificial.</li>
+                <li>Es multiplataforma, lo que te brinda flexibilidad para trabajar en cualquier sistema operativo.</li>
+            </ul>
+
+            <!-- Imagen de ventajas -->
+            <div class="image-container">
+                <img src="https://innovaconsulting.es/wp-content/uploads/2019/06/visual-studio-code-1280x640.jpg" alt="Ventajas de Visual Studio Code">
+            </div>
+        </section>
+
+        <section id="desventajas" class="disadvantages">
+            <h2>Desventajas</h2>
+            <ul>
+                <li>Puede ser lento en proyectos grandes.</li>
+                <li>Requiere conocimientos técnicos para personalizar.</li>
+                <li>Curva de aprendizaje: aunque VS Code es fácil de usar, aprender a aprovechar todas sus funcionalidades requiere tiempo y práctica.</li>
+            </ul>
+
+            <!-- Imagen de desventajas -->
+            <div class="image-container">
+                <img src="https://www.dongee.com/tutoriales/content/images/2024/06/image-133.png" alt="Desventajas de Visual Studio Code">
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Visual Studio Code. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('nav ul li a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                window.scrollTo({
+                    top: targetElement.offsetTop - 50, // Adjust this value to fit your header height
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Section reveal on scroll
+        const sections = document.querySelectorAll('section');
+
+        const revealSection = () => {
+            const revealPoint = window.innerHeight - 100; // Trigger point
+            sections.forEach(section => {
+                const sectionTop = section.getBoundingClientRect().top;
+                if (sectionTop < revealPoint) {
+                    section.classList.add('visible');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', revealSection);
+
+        // Initial check for revealing sections already in view
+        revealSection();
+    </script>
+
+</body>
+</html>
